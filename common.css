@@ -2,10 +2,6 @@
    common.css — shared across all pages
 ══════════════════════════════ */
 
-/* ── GOOGLE FONTS (import in each HTML <head>) ──
-   <link href="https://fonts.googleapis.com/css2?family=Volkhov:wght@700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
-*/
-
 /* ── VARIABLES ── */
 :root {
   --navy:      #181E4B;
@@ -59,31 +55,35 @@ body {
   line-height: 1.2;
 }
 
-/* ── NAVBAR ── */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28px 80px;
+/* ══════════════════════════════
+   NAVBAR — Bootstrap overrides
+══════════════════════════════ */
+.navbar {
+  padding: 16px 0;
+  background: var(--white) !important;
 }
 
-.logo img { height: 36px; display: block; }
+.navbar-brand img { height: 36px; display: block; }
 
-.nav-links { display: flex; gap: 44px; list-style: none; }
+.nav-link {
+  color: var(--navy) !important;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color var(--transition);
+}
 
-.nav-links a,
+.nav-link:hover { color: var(--orange) !important; }
+
 .login-link {
   text-decoration: none;
   color: var(--navy);
   font-size: 15px;
   font-weight: 500;
   transition: color var(--transition);
+  white-space: nowrap;
 }
 
-.nav-links a:hover,
 .login-link:hover { color: var(--orange); }
-
-.nav-actions { display: flex; align-items: center; gap: 24px; }
 
 .btn-signup {
   border: 1.5px solid var(--navy);
@@ -95,11 +95,12 @@ body {
   text-decoration: none;
   background: transparent;
   transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
 }
 
 .btn-signup:hover { background: var(--navy); color: var(--white); }
 
-.lan select {
+.lan-select {
   border: none;
   outline: none;
   font-family: 'Poppins', sans-serif;
@@ -111,14 +112,7 @@ body {
 }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
-  .nav, .container { padding-left: 40px; padding-right: 40px; }
-  .nav { padding-top: 20px; padding-bottom: 20px; }
-}
-
 @media (max-width: 768px) {
-  .nav { flex-wrap: wrap; gap: 16px; padding: 16px 20px; }
-  .nav-links { gap: 20px; flex-wrap: wrap; }
   .container { padding: 0 20px; }
   .section { padding: 50px 0; }
   .section-title { font-size: 28px; }
