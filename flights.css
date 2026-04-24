@@ -1,0 +1,73 @@
+/* ══════════════════════════
+   flights.css — Testimonials & Sponsors
+   Requires: common.css
+══════════════════════════ */
+
+.testimonials { padding-bottom: 40px; }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.testimonials-left .section-subtitle,
+.testimonials-left .section-title { text-align: left; }
+
+.testimonial-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.06);
+}
+
+.testimonial-quote {
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.testimonial-author { display: flex; align-items: center; gap: 16px; }
+
+.testimonial-author img {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-author h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+.testimonial-author p { font-size: 13px; }
+
+/* ── SPONSORS ── */
+.sponsors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  padding: 40px 0;
+  opacity: .6;
+}
+
+.sponsors img {
+  width: 120px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter var(--transition);
+}
+
+.sponsors img:hover { filter: grayscale(0%); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .testimonials-grid { grid-template-columns: 1fr; gap: 30px; }
+  .sponsors { gap: 30px; }
+  .sponsors img { width: 80px; }
+}

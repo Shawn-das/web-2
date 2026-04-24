@@ -1,0 +1,54 @@
+/* ══════════════════════════
+   hotels.css — Services
+   Requires: common.css
+══════════════════════════ */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.service-card {
+  text-align: center;
+  padding: 40px 24px;
+  border-radius: var(--radius-lg);
+  background: #F5F5F5;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  cursor: pointer;
+}
+
+.service-card:hover,
+.service-card.active {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  background: var(--white);
+}
+
+.service-icon {
+  width: 72px; height: 72px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon img { max-width: 64px; max-height: 64px; object-fit: contain; }
+
+.service-card h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--dark-blue);
+  margin-bottom: 10px;
+}
+
+.service-card p { font-size: 14px; line-height: 1.65; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
